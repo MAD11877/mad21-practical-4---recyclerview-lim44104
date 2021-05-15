@@ -50,32 +50,34 @@ public class MainActivity extends AppCompatActivity {
         }
 
         User finalUser = user;
-        //button event listener
-        followButton.setOnClickListener(v -> {
-            Log.v(TAG, "Button Pressed!");
+        followButton.setOnClickListener(new View.OnClickListener() {    //button event listener
+            @Override
+            public void onClick(View v) {
+                Log.v(TAG, "Button Pressed!");
 
-            if (finalUser.isFollowed()) {    //if false (haven't follow), set to false and set text to Follow
-                finalUser.setFollowed(false);
-                followButton.setText("Follow");
-                Log.v(TAG, "User is not Followed.");
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(
-                        MainActivity.this,
-                        "Unfollowed",
-                        duration);
-                toast.show();
-            }
+                if (finalUser.isFollowed()) {    //if false (haven't follow), set to false and set text to Follow
+                    finalUser.setFollowed(false);
+                    followButton.setText("Follow");
+                    Log.v(TAG, "User is not Followed.");
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(
+                            MainActivity.this,
+                            "Unfollowed",
+                            duration);
+                    toast.show();
+                }
 
-            else {
-                finalUser.setFollowed(true); //if true (followed), set to true and set text to Followed
-                followButton.setText("Followed");
-                Log.v(TAG, "User is Followed.");
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(
-                        MainActivity.this,
-                        "Followed",
-                        duration);
-                toast.show();
+                else {
+                    finalUser.setFollowed(true); //if true (followed), set to true and set text to Followed
+                    followButton.setText("Followed");
+                    Log.v(TAG, "User is Followed.");
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(
+                            MainActivity.this,
+                            "Followed",
+                            duration);
+                    toast.show();
+                }
             }
         });
 

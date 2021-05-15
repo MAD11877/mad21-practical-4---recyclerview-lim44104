@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -68,5 +69,18 @@ public class ListActivity extends AppCompatActivity {
 
     private int rng() {
         return new Random().nextInt();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(TAG, "Resume");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+        if (sharedPreferences.contains("user_id")) {
+            int userId = sharedPreferences.getInt("user_id", 0);
+            User user = userList.get(userId);
+            userList.get(userId).setFollowed(!user.isFollowed());
+        }
     }
 }
