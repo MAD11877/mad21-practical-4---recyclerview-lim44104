@@ -1,13 +1,13 @@
 package sg.edu.np.mad.madpractical;
 
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -28,12 +28,12 @@ public class ListActivity extends AppCompatActivity {
         }
         Log.v(TAG, "List Activity Created");
 
-        RecyclerView recyclerViewCustom = findViewById(R.id.rv);
+        RecyclerView recyclerView = findViewById(R.id.rv);
         CustomAdapter cAdapter = new CustomAdapter(userList, ListActivity.this);
         LinearLayoutManager cLayoutManager = new LinearLayoutManager(this);
-        recyclerViewCustom.setLayoutManager(cLayoutManager);
-        recyclerViewCustom.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewCustom.setAdapter(cAdapter);
+        recyclerView.setLayoutManager(cLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(cAdapter);
 
         /*
         ImageView alertImg = findViewById(R.id.round_android);
