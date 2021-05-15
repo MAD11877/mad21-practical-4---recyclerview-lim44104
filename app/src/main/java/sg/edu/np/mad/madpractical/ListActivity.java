@@ -28,7 +28,7 @@ public class ListActivity extends AppCompatActivity {
         }
         Log.v(TAG, "List Activity Created");
 
-        RecyclerView recyclerViewCustom = findViewById(R.id.recyclerView);
+        RecyclerView recyclerViewCustom = findViewById(R.id.rv);
         CustomAdapter cAdapter = new CustomAdapter(userList, ListActivity.this);
         LinearLayoutManager cLayoutManager = new LinearLayoutManager(this);
         recyclerViewCustom.setLayoutManager(cLayoutManager);

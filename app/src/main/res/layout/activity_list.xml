@@ -7,7 +7,7 @@
     tools:context=".ListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rv"
         android:layout_width="387dp"
         android:layout_height="575dp"
         android:layout_marginStart="12dp"
