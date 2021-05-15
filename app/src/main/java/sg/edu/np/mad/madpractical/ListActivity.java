@@ -34,33 +34,6 @@ public class ListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(cLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(cAdapter);
-
-        /*
-        ImageView alertImg = findViewById(R.id.round_android);
-        alertImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ListActivity.this);
-
-                builder.setTitle("Profile")
-                        .setMessage("MADness")
-                        .setCancelable(false)
-                        .setNegativeButton("Close", null)
-                        .setPositiveButton("View", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int id) {
-                                Intent intent = new Intent(ListActivity.this, MainActivity.class);
-                                intent.putExtra("randomNum", new Random().nextInt());
-                                startActivity(intent);
-                            }
-                        });
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
-
-         */
     }
 
     private boolean rngFollow() {
