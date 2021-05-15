@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         TextView userDescription = findViewById(R.id.userDescription);  //define description
         userDescription.setText(user.getDescription());
 
-        Button followButton = findViewById(R.id.followButton);  //define follow button
+        Button followButton = findViewById(R.id.btnFollow);  //define follow button
 
         Bundle bundle = getIntent().getExtras();
 
