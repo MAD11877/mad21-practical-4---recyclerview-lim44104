@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("sg.edu.np.madweek2", appContext.getPackageName());
+        assertEquals("sg.edu.np.mad.madpractical", appContext.getPackageName());
     }
 }
